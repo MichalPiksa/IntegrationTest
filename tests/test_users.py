@@ -1,3 +1,7 @@
+import pytest
+
+@pytest.mark.users
+@pytest.mark.smoke
 def test_get_users(api_client):
     # Arrange
     expected_status = 200
@@ -14,6 +18,7 @@ def test_get_users(api_client):
     print(f"  First user: {users[0]}")
 
 
+@pytest.mark.users
 def test_get_single_user(api_client):
     # Arrange
     user_id = 1
@@ -48,6 +53,7 @@ def test_get_user_has_required_fields(api_client):
     print(f"  User data: {user}")
 
 
+@pytest.mark.users
 def test_get_nonexistent_user(api_client):
     # Arrange
     nonexistent_user_id = 99999
@@ -60,6 +66,7 @@ def test_get_nonexistent_user(api_client):
     print(f"\n✓ GET /users/{nonexistent_user_id} correctly returned 404 (Not Found)")
 
 
+@pytest.mark.users
 def test_get_users_response_structure(api_client):
     # Arrange
     expected_status = 200

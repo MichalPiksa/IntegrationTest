@@ -7,5 +7,8 @@ install:
 test:
 	. .venv/bin/activate && pytest
 
+smoke_test:
+	. .venv/bin/activate && pytest -m smoke
+
 clean:
 	rm -rf .venv
