@@ -61,7 +61,6 @@ def test_get_nonexistent_user(api_client):
 
 
 def test_get_users_response_structure(api_client):
-    """Test the structure of the users list response - Arrange, Act, Assert"""
     # Arrange
     expected_status = 200
     expected_fields_per_user = ["id", "name", "username", "email"]
@@ -73,7 +72,7 @@ def test_get_users_response_structure(api_client):
     # Assert
     assert response.status_code == expected_status
     assert all(isinstance(user, dict) for user in users)
-    for user in users[:3]:  # Check first 3 users
+    for user in users[:3]:
         for field in expected_fields_per_user:
             assert field in user, f"User missing field: {field}"
     
