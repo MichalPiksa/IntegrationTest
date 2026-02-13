@@ -16,4 +16,4 @@ jobs:
         run: docker build -t integration-tests -f docker/Dockerfile .
 
       - name: Run tests
-        run: docker run integration-tests
+        run: docker run -e BASE_URL=${{ secrets.BASE_URL }} integration-tests
