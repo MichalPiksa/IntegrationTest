@@ -7,6 +7,6 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
-ENV BASE_URL=https://jsonplaceholder.typicode.com
+ENV BASE_URL=os.getenv("BASE_URL")
 
 CMD ["pytest"]

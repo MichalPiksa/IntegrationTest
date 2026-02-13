@@ -9,3 +9,6 @@ Integration tests using **pytest + requests**.
 ## One-command setup
 ```bash
 make install
+```
+
+## Secrets stored in "data/.env"
